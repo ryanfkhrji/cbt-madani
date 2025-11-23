@@ -1,0 +1,88 @@
+@extends('layouts.admin')
+@section('content-admin')
+<div class="min-h-screen p-4 mt-16">
+    <div class="grid grid-cols-1">
+        <div class="w-auto shadow-sm card bg-white-custom dark:bg-dark-black-custom">
+            <div class="card-body">
+                <h3 class="mb-4 text-base font-medium lg:text-xl text-black-custom dark:text-white-custom">Tambah Guru
+                </h3>
+                <form action="{{ route('master_guru.store') }}" method="POST">
+                    @csrf
+
+                    <!-- NIS -->
+                    <div class="mb-4">
+                        <label for="nip"
+                            class="block mb-3 text-sm font-medium text-black-custom dark:text-white-custom">NIP</label>
+                        @error('nip')
+                            <div class="mb-2 text-sm text-red-500">{{ $message }}</div>
+                        @enderror
+                        <input type="text" name="nip" id="nip" required
+                            class="block w-full px-2 py-3 text-sm border rounded-lg border-gray-custom text-black-custom md:w-md dark:text-white-custom"
+                            value="{{ old('nip') }}" placeholder="Masukkan nip">
+                    </div>
+
+
+                    <!-- Nama -->
+                    <div class="mb-4">
+                        <label for="nama"
+                            class="block mb-3 text-sm font-medium text-black-custom dark:text-white-custom">Nama</label>
+                        @error('nama')
+                            <div class="mb-2 text-sm text-red-500">{{ $message }}</div>
+                        @enderror
+                        <input type="text" name="nama" id="nama" required
+                            class="block w-full px-2 py-3 text-sm border rounded-lg border-gray-custom text-black-custom md:w-md dark:text-white-custom"
+                            value="{{ old('nama') }}" placeholder="Masukkan nama lengkap">
+                    </div>
+
+                    <!-- Tanggal Lahir -->
+                    <div class="mb-4">
+                        <label for="tanggal_lahir"
+                            class="block mb-3 text-sm font-medium text-black-custom dark:text-white-custom">Tanggal Lahir</label>
+                        @error('tanggal_lahir')
+                            <div class="mb-2 text-sm text-red-500">{{ $message }}</div>
+                        @enderror
+                        <input type="date" name="tanggal_lahir" id="tanggal_lahir" required
+                            class="block w-full px-2 py-3 text-sm border rounded-lg border-gray-custom text-black-custom md:w-md dark:text-white-custom"
+                            value="{{ old('tanggal_lahir') }}">
+                    </div>
+
+                    <!-- Jenis Kelamin -->
+                    <div class="mb-4">
+                        <label class="block mb-3 text-sm font-medium text-black-custom dark:text-white-custom">Jenis
+                            Kelamin</label>
+                        @error('jenis_kelamin')
+                            <div class="mb-2 text-sm text-red-500">{{ $message }}</div>
+                        @enderror
+                        <div class="flex items-center gap-6">
+                            <label class="flex items-center gap-2">
+                                <input type="radio" name="jenis_kelamin" value="Laki-laki"
+                                    {{ old('jenis_kelamin') == 'Laki-laki' ? 'checked' : '' }}>
+                                <span class="text-black-custom dark:text-white-custom">Laki-laki</span>
+                            </label>
+                            <label class="flex items-center gap-2">
+                                <input type="radio" name="jenis_kelamin" value="Perempuan"
+                                    {{ old('jenis_kelamin') == 'Perempuan' ? 'checked' : '' }}>
+                                <span class="text-black-custom dark:text-white-custom">Perempuan</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+
+                    <!-- Tombol Aksi -->
+                    <div class="flex flex-wrap gap-1 pt-4">
+                        <button type="submit" class="bg-black btn text-white-custom" id="simpan">
+                            <i class="fa-regular fa-floppy-disk text-white-custom"></i> Simpan
+                        </button>
+                        <a href="{{ route('master_guru.index') }}"
+                            class="border border-black btn text-black-custom dark:text-white-custom">
+                            <i class="fa-regular fa-circle-xmark text-black-custom dark:text-white-custom"></i> Batal
+                        </a>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
