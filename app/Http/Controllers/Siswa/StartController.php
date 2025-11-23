@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Siswa;
 
 use App\Models\UjianJawaban;
 use Illuminate\Http\Request;
