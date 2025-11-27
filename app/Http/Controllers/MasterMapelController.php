@@ -63,7 +63,9 @@ class MasterMapelController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $mapel = Mapel::findOrFail($id);
+        // $mapel = Mapel::findOrFail($id);
+        $mapel = Mapel::findOrFail(base64_decode($id));
+
         $data = $request->validate([
             'nama_mapel' => 'string|required',
             'id_guru' => 'required'
@@ -81,6 +83,6 @@ class MasterMapelController extends Controller
         $mapel = Mapel::findOrFail($id);
         $mapel->delete();
 
-        return redirect()->route('master_mapel.index')->with('succes', 'Berhasil Menghapus Data Mapel');
+        return redirect()->route('master_mapel.index')->with('success', 'Berhasil Menghapus Data Mapel');
     }
 }
