@@ -63,9 +63,7 @@ class MasterMapelController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        // $mapel = Mapel::findOrFail($id);
-        $mapel = Mapel::findOrFail(base64_decode($id));
-
+        $mapel = Mapel::findOrFail($id);
         $data = $request->validate([
             'nama_mapel' => 'string|required',
             'id_guru' => 'required'
