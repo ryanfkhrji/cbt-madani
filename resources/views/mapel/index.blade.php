@@ -42,7 +42,7 @@
                                         class="transition-colors duration-200 dark:text-white-custom">
                                         <td class="px-4 py-2">{{ $loop->iteration }}</td>
                                         <td class="px-4 py-2">{{ $data->nama_mapel }}</td>
-                                        <td class="px-4 py-2">{{ $data->guru->nama }}</td>
+                                        <td class="px-4 py-2">{{ $data->guru->nama ?? '-' }}</td>
                                         <td class="flex gap-2 px-4 py-2">
                                             <a href="{{ route('master_mapel.edit', base64_encode($data->id)) }}"
                                                 class="border border-black btn btn-edit text-black-custom dark:text-white-custom"><i
