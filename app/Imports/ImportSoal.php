@@ -33,7 +33,7 @@ class ImportSoal implements ToModel, WithHeadingRow
                 return null;
             }
 
-            
+
 
             // Get current row number for image processing
             $currentRowNumber = self::$rowIndex++;
@@ -56,7 +56,11 @@ class ImportSoal implements ToModel, WithHeadingRow
                 'pilihan_3' => $row['pilihan_3'] ?? null,
                 'pilihan_4' => $row['pilihan_4'] ?? null,
                 'pilihan_5' => $row['pilihan_5'] ?? null,
-                'poin' => $row['poin'] ?? 1,
+                // 'poin' => $row['poin'] ?? 1,
+                'poin' => isset($row['poin']) && $row['poin'] !== ''
+                    ? floatval(str_replace(',', '.', $row['poin']))
+                    : 1,
+
                 'jawaban_benar' => $row['jawaban_benar'],
             ];
 
@@ -165,7 +169,7 @@ class ImportSoal implements ToModel, WithHeadingRow
             // Process all drawings in the worksheet
             foreach ($worksheet->getDrawingCollection() as $drawing) {
                 $coordinates = $drawing->getCoordinates();
-                
+
                 if (!preg_match('/([A-Z]+)(\d+)/', $coordinates, $matches)) {
                     Log::warning("Invalid drawing coordinates: $coordinates");
                     continue;
@@ -214,7 +218,7 @@ class ImportSoal implements ToModel, WithHeadingRow
                         Log::warning("Failed to open drawing file");
                         continue;
                     }
-                    
+
                     $imageContents = '';
                     while (!feof($zipReader)) {
                         $imageContents .= fread($zipReader, 1024);
