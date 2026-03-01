@@ -13,7 +13,7 @@
     <link rel="icon" type="image/svg+xml" href="/assets/logo-sekolah.png">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <link rel="stylesheet" href="/build/assets/app-DnkhhTks.css">
+    <link rel="stylesheet" href="/build/assets/app-JHb-6O-0.css">
     <script src="/build/assets/app-BYiNv_yN.js" defer></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>

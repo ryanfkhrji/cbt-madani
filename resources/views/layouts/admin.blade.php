@@ -21,8 +21,8 @@
     @vite(['resources/css/app.css'])
 
     {{-- CSS tambahan --}}
-    <link rel="stylesheet" href="/build/assets/app-DnkhhTks.css">
-
+    <link rel="stylesheet" href="/build/assets/app-JHb-6O-0.css">
+    <script src="/build/assets/app-BYiNv_yN.js" defer></script>
     {{-- Select2 CSS --}}
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
@@ -67,4 +67,5 @@
     @stack('scripts')
 
 </body>
+
 </html>
