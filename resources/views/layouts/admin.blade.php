@@ -17,12 +17,8 @@
     <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet">
 
-    {{-- CSS hasil vite --}}
-    @vite(['resources/css/app.css'])
 
     {{-- CSS tambahan --}}
-    <link rel="stylesheet" href="/build/assets/app-JHb-6O-0.css">
-    <script src="/build/assets/app-BYiNv_yN.js" defer></script>
     {{-- Select2 CSS --}}
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
@@ -31,6 +27,8 @@
 
     {{-- lalu Select2 JS --}}
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <link rel="stylesheet" href="/build/assets/app-JHb-6O-0.css">
+    <script src="/build/assets/app-BYiNv_yN.js" defer></script>
 
     {{-- terakhir app.js dari vite --}}
     @vite(['resources/js/app.js'])
