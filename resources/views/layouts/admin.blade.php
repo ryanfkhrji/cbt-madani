@@ -9,29 +9,22 @@
 
     <!-- fontawesome -->
     <link rel="stylesheet" href="/fontawesome/css/all.min.css" />
-
-    <!-- favicon -->
     <link rel="icon" type="image/svg+xml" href="/assets/logo-sekolah.png">
 
-    {{-- quill --}}
-    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+    <!-- Quill -->
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
 
-    {{-- jQuery harus duluan --}}
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    {{-- CSS tambahan --}}
-    {{-- Select2 CSS --}}
+
+    <!-- Select2 -->
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-
-
-
-    {{-- lalu Select2 JS --}}
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <!-- Vite -->
     <link rel="stylesheet" href="/build/assets/app-JHb-6O-0.css">
     <script src="/build/assets/app-BYiNv_yN.js" defer></script>
-
-    {{-- terakhir app.js dari vite --}}
-    @vite(['resources/js/app.js'])
 </head>
 
 <body class="dark">
