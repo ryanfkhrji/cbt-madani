@@ -37,8 +37,8 @@ class ImportSiswa implements ToModel, WithHeadingRow
             Log::warning("Kelas tidak ditemukan: {$row['kelas']}");
             return null;
         }
-         // generate password acak 8 karakter
-        $plainPassword = Str::random(8);
+        // generate password acak 8 karakter
+        $plainPassword = random_int(10000000, 99999999);
 
         // buat Siswa
         $siswa = Siswa::create([
